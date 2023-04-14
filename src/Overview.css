@@ -3,8 +3,7 @@ Overview of the project directory
 src
 ├── components
 │   ├── Topbar.js
-│   ├── Footer.js
-│   ├── Product.js
+│   ├── Footer.js .
 │   └── ProductList.js
 ├── data
 │   ├── MensPants.js
@@ -16,7 +15,10 @@ src
 ├── pages
 │   ├── Homepage.js
 │   ├── CartPage.js
+│   ├── LoginModal.js
 │   ├── SignUp.js
+│   ├── About.js
+│   ├── Contact.js
 │   ├── MensShirts.js
 │   ├── MensShirts.js
 │   ├── MensPants.js
@@ -26,20 +28,40 @@ src
 │   └── WomensFootwear.js
 ├── img
 │   └── ...
-└── App.css
+├── App.js
+├── App.css
+└── index.js
 
 
 I. components
-    1. Product.js 
-    2. ProductList.js
+    1. Topbar.js 
+        Logo bar with drop down menu icon on left and search, login, and cart icons on right 
+        Navigation bar with "Mens" and "Womens" drop down menus
+    2. Footer.js 
+        Generic footer with links to some pages and contact info
+    3. ProductList.js
+        Contains code used on various shopping pages (MensShirts, etc.) to display info like name, vendor, etc.
+
 
 II. data
-    1. MensPants
+    Has data arrays for 6 products, can be replaced with database data
+    6 product array pages total (MensShirts, WomensPants, etc.)
 
 III. pages
-
+    - LoginModal has code for login pop up once login icon in Topbar is clicked
+    - CartPage has some basic code for cart and possible Laravel integration
+    - MensShirts, etc. are the shopping pages for each category, using the corresponding files in the data folder and ProductList.js in the components folder
+    - SignUp page is a form with a submit button
+    
 IV. img
     Contains all images in .jpg format
-     37 Images Total
+     38 Images Total
         - Product images: 36 total
         - Homepage image: 1 total
+        - About image: 1 total
+
+V. App.js
+    Contains routes
+
+VI. App.css
+    Styling for all pages included, sectioned with comments
