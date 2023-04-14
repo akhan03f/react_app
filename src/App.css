@@ -1,38 +1,775 @@
-.App {
+/* CSS code for entire document
+  Can do a search function to find specific divs or components -
+  each webpage or section is labled in a comment above that section */
+
+
+/* general styling for the whole top header bar (the one with the logo)*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 50px;
+  font-size: 20px;
+  color: #333333;
+  padding: 10px;
+}
+
+/* Center the logo and format text */
+.logo {
+  text-align: center;
+  flex: 1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  font-size: 160%;
+  color: #333333;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+
+/**** Section of CSS code for top header bar dropdown ☰ ****/
+
+
+/* Styling for the ☰ button itself */
+.dropdown-button {
+  display: inline-block;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown-footer {
+  font-size: 9px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 500%;
+  z-index: 1;
+  min-width: 160px;
+  padding: 10px 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* format the right half of the top header bar */
+.right-menu a {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 20px;
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+
+.right-menu form {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-menu input[type='text'] {
+  border: 1px solid #333333;
+  padding: 4px 8px;
+  margin-right: 4px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.right-menu button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+/**** Navigation bar (Navy background) of Topbar: ****/
+
+
+/* Navigation bar */
+.navbar {
+  background-color: navy;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  padding: 1.1%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0%;
+  padding: 0%;
+}
+
+.nav-item {
+  position: relative;
+  margin-right: 2%;
+  padding-left: 7%;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sub-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: navy;
+  padding: 10px;
+  display: none;
+  z-index: 1;
+}
+
+/* Everything for the hover drop-down menu for "Men's" & "Women's" below: */
+.nav-item:hover .sub-nav {
+  display: block;
+}
+
+.sub-nav li {
+  margin: 5px 0;
+}
+
+.sub-nav a {
+  color: white;
+  font-weight: normal;
+}
+
+.sub-nav li:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-item {
+    right: 26.5%;
+  }
+  
+  .sub-nav {
+    width: 200px;
+    box-shadow: 1px 1px 5px 0px blue;
+    list-style: none;
+    font-family: sans-serif;
+  }
+}
+
+
+
+/***** Code for Homepage, excluding navbar/header from above *****/
+
+
+
+.Homepage {
+  display: flex;
+}
+
+.Homepage-left {
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Homepage-left h1 {
+  margin-top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Homepage-left img {
+  max-width: 100%;
+  z-index: -5;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Homepage-right {
+  flex: 1;
+  text-align: center;
+}
+
+.Homepage-right img {
+  max-width: 100%;
+}
+
+.Homepage-image-wrapper {
+  position: relative;
+}
+
+.Homepage-image-wrapper h1, h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.Homepage-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.Homepage-button {
+  background-color: black;
+  height: 20%;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Homepage-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+
+/***** CSS code for Footer only *****/
+
+
+footer {
+  background-color: #f1f1f1;
+  padding: 2em 0;
+}
+
+.Footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.Footer-links,
+.Footer-customer-service {
+  margin: 0 1em;
+}
+
+.Footer-links h3,
+.Footer-customer-service h3 {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.Footer-links ul,
+.Footer-customer-service ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Footer-links li,
+.Footer-customer-service li {
+  margin-bottom: 0.5em;
+}
+
+.Footer-links a,
+.Footer-customer-service a {
+  color: #333;
+  text-decoration: none;
+}
+
+.Footer-links a:hover,
+.Footer-customer-service a:hover {
+  text-decoration: underline;
+}
+
+.Footer-legal {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+.Footer-legal p {
+  margin: 0;
+}
+
+
+/***** CSS for all shopping pages (Men's Pants, Women's Shirts, etc.) *****/
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1% auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: navy;
+  margin-bottom: 30px;
+}
+
+.Shopping-title {
+  margin-left: 20%;
+}
+
+
+.product {
+  background-color: #fff;
+
+  border-radius: 5px;
+  flex-basis: calc(28% - 10px); /* Set to 33.33% with margins included */
+  padding: 20px;
+  margin: 10px 5px 20px 5px;
+  text-align: center;
+}
+
+.product img {
+  cursor: pointer;
+  height: 200px; /* Set a fixed height */
+  max-width: 100%;
+  object-fit: cover; /* Use object-fit to preserve the aspect ratio */
+  transition: transform 0.3s;
+  width: 100%; /* Set a fixed width */
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h4 {
+  color: gray;
+}
+.product h3 {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product button {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.product button:hover {
+  background-color: blue;
+}
+
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.product-card {
+  background-color: #ffffff85;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  width: 280px;
+  transition: all 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 12px 0;
+  color: #333;
+}
+
+.product-card h4 {
+  font-size: 16px;
+  color: #555;
+  text-decoration: none;
+  margin: 0;
+}
+
+.product-card p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #333;
+}
+
+.add-to-cart-btn {
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/***** Login prompt when User icon is clicked *****/
+
+.login-modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login-modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  position: relative;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: navy;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  opacity: 0.8;
+}
+
+.signup-link {
+  color: navy;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/***** Sign Up page *****/
+.sign-up {
+  margin: 50px auto;
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.sign-up h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  font-size: 18px;
+}
+
+.submit-button {
+  background-color: #007bff;
   color: white;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #0069d9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:required:invalid {
+  border-color: gray;
+}
+
+input:required:valid {
+  border-color: green;
+}
+
+
+
+
+
+
+
+/********** Product Page ***********/
+
+
+.product-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.product-details h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-details p {
+  margin: 0;
+}
+
+.add-to-cart {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.add-to-cart-btn {
+  background-color: #0a7bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0858c7;
+}
+
+input[type='number'] {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/******** About Page **********/
+.about-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-header {
+  padding-top: 0,7rem;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0rem;
+}
+
+.about-content {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.about-content img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+
+
+/******** Search bar **********/
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.search-input {
+  display: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 200px;
+}
+
+.search-icon {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: -2px;
+  margin-right: 1px;
+}
+
+.search-container:hover .search-input {
+  display: block;
 }

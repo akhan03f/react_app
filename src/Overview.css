@@ -1,0 +1,45 @@
+Overview of the project directory
+
+src
+├── components
+│   ├── Topbar.js
+│   ├── Footer.js
+│   ├── Product.js
+│   └── ProductList.js
+├── data
+│   ├── MensPants.js
+│   ├── MensShirts.js
+│   ├── MensFootwear.js
+│   ├── WomensPants.js
+│   ├── WomensShirts.js
+│   └── WomensFootwear.js
+├── pages
+│   ├── Homepage.js
+│   ├── CartPage.js
+│   ├── SignUp.js
+│   ├── MensShirts.js
+│   ├── MensShirts.js
+│   ├── MensPants.js
+│   ├── MensFootwear.js
+│   ├── WomensShirts.js
+│   ├── WomensPants.js
+│   └── WomensFootwear.js
+├── img
+│   └── ...
+└── App.css
+
+
+I. components
+    1. Product.js 
+    2. ProductList.js
+
+II. data
+    1. MensPants
+
+III. pages
+
+IV. img
+    Contains all images in .jpg format
+     37 Images Total
+        - Product images: 36 total
+        - Homepage image: 1 total
