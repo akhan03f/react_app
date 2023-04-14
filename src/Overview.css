@@ -1,31 +1,33 @@
 Overview of the project directory
+* indicates the page needs to be integrated with the database
 
 src
 ├── components
 │   ├── Topbar.js
 │   ├── Footer.js .
 │   └── ProductList.js
-├── data
-│   ├── MensPants.js
-│   ├── MensShirts.js
-│   ├── MensFootwear.js
-│   ├── WomensPants.js
-│   ├── WomensShirts.js
-│   └── WomensFootwear.js
+├── data               *All data pages have product name, vendor, price, etc. to be stored in database
+│   ├── MensPants.js *
+│   ├── MensShirts.js *
+│   ├── MensFootwear.js *
+│   ├── WomensPants.js *
+│   ├── WomensShirts.js *
+│   └── WomensFootwear.js *
 ├── pages
 │   ├── Homepage.js
 │   ├── CartPage.js
-│   ├── LoginModal.js
-│   ├── SignUp.js
+│   ├── LoginModal.js *Login form
+│   ├── SignUp.js     *Sign up form
+│   ├── ProductPage.js *Shows individual product pages using the product id (uuid). Note this also has "Product Details" unlike the main shopping pages
 │   ├── About.js
 │   ├── Contact.js
-│   ├── MensShirts.js
-│   ├── MensShirts.js
-│   ├── MensPants.js
-│   ├── MensFootwear.js
-│   ├── WomensShirts.js
-│   ├── WomensPants.js
-│   └── WomensFootwear.js
+│   ├── MensShirts.js *All shopping pages below have name, price, etc. needed from database
+│   ├── MensShirts.js *
+│   ├── MensPants.js *
+│   ├── MensFootwear.js *
+│   ├── WomensShirts.js *
+│   ├── WomensPants.js *
+│   └── WomensFootwear.js *
 ├── img
 │   └── ...
 ├── App.js
@@ -52,7 +54,8 @@ III. pages
     - CartPage has some basic code for cart and possible Laravel integration
     - MensShirts, etc. are the shopping pages for each category, using the corresponding files in the data folder and ProductList.js in the components folder
     - SignUp page is a form with a submit button
-    
+    - About and Contact pages are just generic text pages, no backend integration needed
+
 IV. img
     Contains all images in .jpg format
      38 Images Total
