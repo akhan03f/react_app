@@ -1,3 +1,5 @@
+// Footer on ever webpage
+
 import React from 'react';
 
 function Footer() {

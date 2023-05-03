@@ -10,6 +10,7 @@ import shirt2 from '../img/shirt-mens2.jpg';
 import shirt3 from '../img/shirt-mens3.jpg';
 import shirt4 from '../img/shirt-mens4.jpg';
 import shirt5 from '../img/shirt-mens5.jpg';
+import { Ellipsis } from "react-bootstrap/esm/PageItem";
 
 const mensShirts = [
   {
@@ -63,3 +64,5 @@ const mensShirts = [
 ];
 
 export { mensShirts };
+
+

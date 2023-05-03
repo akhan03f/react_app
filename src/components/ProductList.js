@@ -1,25 +1,37 @@
-// Used for product lists on shopping pages (like Men's Shirts)
-// shows image, vendor, name, price, and add to cart button
-// for each product card on the shopping pages (6 total on each page)
+import React from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css';
+const ProductList = ({ onAddToCart, products }) => {
+  const getImageSrc = (imgName) => {
+    if (imgName.startsWith("http")) {
+      return imgName;
+    } else {
+      try {
+        return require(`../img/${imgName}`);
+      } catch (error) {
+        console.error(`Image not found: ${imgName}`);
+        return "";
+      }
+    }
+  };
+  
 
-const ProductList = ({ products, onAddToCart }) => {
   return (
     <div className="product-list-container">
       {products.map((product) => (
         <div key={product.id} className="product-card">
           <Link to={`/product/${product.id}`}>
-            <img src={product.img} alt={product.name} />
+            <img src={getImageSrc(product.img_name)} alt={product.prod_description} />
           </Link>
-          <h3>{product.vendor}</h3>
+          <h3>{product.vendor_name}</h3>
           <Link to={`/product/${product.id}`}>
-            <h4>{product.name}</h4>
+            <h4>{product.prod_description}</h4>
           </Link>
           <p>${product.price}</p>
-          <button className="add-to-cart-btn" onClick={() => onAddToCart(product)}>Add to Cart</button>
+          <button className="add-to-cart-btn" onClick={() => onAddToCart(product)}>
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

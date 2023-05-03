@@ -1,8 +1,12 @@
+// Topbar on every webpage including nav bar and logo bars
+
 import React, { useState } from 'react';
 import '../App.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import LoginModal from '../pages/LoginModal';
+import MensShirts from '../pages/MensShirts';
+
 
 
 // The Logo function allows user to click on the logo to get to redirect to the homepage from anywhere
@@ -24,6 +28,17 @@ function Topbar() {
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const toggleLoginModal = () => setShowLoginModal(!showLoginModal);
+
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  const handleUserLogin = (user) => {
+    setLoggedInUser(user);
+  };
+
+  const handleUserLogout = () => {
+    setLoggedInUser(null);
+  };
+
 
   return (
     <>
@@ -75,7 +90,12 @@ function Topbar() {
         </li>
       </ul>
       </nav>
-      <LoginModal show={showLoginModal} onClose={toggleLoginModal} />
+      <LoginModal
+      show={showLoginModal}
+      onClose={toggleLoginModal}
+      onLogin={handleUserLogin}
+      onLogout={handleUserLogout}
+    />
     </>
   );
 }
